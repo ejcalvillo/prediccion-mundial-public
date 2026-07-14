@@ -9,7 +9,7 @@
 -- This migration moves the authoritative deadline into Postgres
 -- so that now() (server UTC time) is the only clock that matters.
 --
--- Deadline: June 10, 2026 23:59:59 CDT = 2026-06-11 05:00:00 UTC
+-- Deadline: December 31, 2026 23:59:59 CST = 2027-01-01 06:00:00 UTC
 -- ============================================================
 
 -- ── 1. Replace the predictions INSERT policy ───────────────
@@ -20,7 +20,7 @@ CREATE POLICY "predictions_insert_before_deadline"
   TO anon, authenticated
   WITH CHECK (
     -- Server-side clock — cannot be spoofed from the client
-    now() < TIMESTAMPTZ '2026-06-11 05:00:00+00'
+    now() < TIMESTAMPTZ '2027-01-01 06:00:00+00'
     AND
     EXISTS (
       SELECT 1 FROM tokens
@@ -40,7 +40,7 @@ SECURITY DEFINER
 AS $$
 BEGIN
   -- Block any call after the deadline regardless of client clock
-  IF now() >= TIMESTAMPTZ '2026-06-11 05:00:00+00' THEN
+  IF now() >= TIMESTAMPTZ '2027-01-01 06:00:00+00' THEN
     RAISE EXCEPTION 'El período de predicciones ha cerrado';
   END IF;
 

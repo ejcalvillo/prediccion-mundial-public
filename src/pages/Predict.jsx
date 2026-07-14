@@ -16,15 +16,15 @@ const STATES = {
   LOADING: 'loading',
   INVALID: 'invalid',
   USED: 'used',
-  EXPIRED: 'expired',   // after June 10 deadline
+  EXPIRED: 'expired',   // after December 31 deadline
   FORM: 'form',
   SUBMITTING: 'submitting',
   SUCCESS: 'success',
   ERROR: 'error',
 }
 
-// Deadline: June 10, 2026 23:59:59 CDT = June 11 2026 05:00:00 UTC
-const DEADLINE = new Date('2026-06-11T05:00:00.000Z')
+// Deadline: December 31, 2026 23:59:59 CST = January 1 2027 06:00:00 UTC
+const DEADLINE = new Date('2027-01-01T06:00:00.000Z')
 
 function isPastDeadline() {
   return new Date() >= DEADLINE
@@ -295,7 +295,7 @@ export default function Predict() {
           Convocatoria cerrada
         </p>
         <p className="text-gray-500 text-sm font-sans text-center leading-relaxed max-w-xs">
-          Las predicciones cerraron el <strong className="text-pitch-dark">10 de junio a las 11:59 pm</strong>.
+          Las predicciones cerraron el <strong className="text-pitch-dark">31 de diciembre a las 11:59 pm</strong>.
           El partido se juega el 11 de junio. ¡Gracias por participar!
         </p>
       </FullScreenMessage>
@@ -369,7 +369,7 @@ export default function Predict() {
         <div className="flex items-center justify-center gap-2 bg-amber-50 border border-amber-200 rounded-2xl px-4 py-2.5">
           <AlertCircle size={14} className="text-amber-500 flex-shrink-0" />
           <p className="text-xs font-sans text-amber-700">
-            Predicciones válidas hasta el <strong>10 de junio, 11:59 pm</strong>
+            Predicciones válidas hasta el <strong>31 de diciembre, 11:59 pm</strong>
           </p>
         </div>
 

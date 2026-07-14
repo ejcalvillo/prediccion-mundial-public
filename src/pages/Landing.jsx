@@ -172,7 +172,7 @@ export default function Landing() {
           <ArrowRight size={18} />
         </a>
         <p className="text-xs text-gray-400 font-sans mt-3">
-          Válido hasta el <strong className="text-gray-600">10 de junio, 11:59 pm</strong>
+          Válido hasta el <strong className="text-gray-600">31 de diciembre, 11:59 pm</strong>
         </p>
       </section>
 
@@ -276,7 +276,7 @@ export default function Landing() {
             El formato es <strong className="text-pitch-dark font-mono">FDN-XXXXXXXX</strong>.
           </p>
           <p className="text-amber-600 text-xs font-sans font-semibold mb-8">
-            Válido hasta el 10 de junio de 2026 a las 11:59 pm
+            Válido hasta el 31 de diciembre de 2026 a las 11:59 pm
           </p>
 
           <form onSubmit={handleTokenSubmit} className="flex flex-col gap-3">
