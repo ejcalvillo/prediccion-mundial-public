@@ -4,7 +4,7 @@ A full-stack fan engagement web app built for the FIFA World Cup 2026 opening ma
 
 Built as a volunteer project for **Farmacia Del Niño** in Ciudad Acuña, Coahuila, México. Developed with [Claude Code](https://claude.ai/code).
 
-**[Live demo →](https://prediccion-mundial-public.vercel.app/)**
+[Live demo →](https://prediccion-mundial-public.vercel.app/)
 
 > **Note on data privacy:** This repository contains no real customer data. All predictions, phone numbers, emails, and QR token values from the live promotion have been excluded. The `supabase/seed.sql` file populates the database with entirely fictional data so the app can be explored and demonstrated locally.
 
